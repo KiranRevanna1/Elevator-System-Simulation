@@ -44,36 +44,35 @@ A web-based elevator simulation system with an intelligent scheduling algorithm 
 1. Navigate to backend folder:
    ```bash
    cd backend
-
+   ```
 2. Install dependencies:
-  ``` bash
-    npm install
-
+  ```bash
+  npm install
+  ```
 3. Start server:
-  ``` bash
+  ```bash
   npm run server
-
-
+  ```
 4. The backend runs on http://localhost:4000.
 
 ### **Frontend**
 
 1. Navigate to frontend folder:
-  ``` bash
+  ```bash
     cd frontend
-
+  ```
 
 2. Install dependencies:
   ``` bash
     npm install
-
+  ```
 
 3. Start React app:
-  ``` bash
+  ```bash
     npm start
+  ```
 
-
-4. Open http://localhost:3000 in your browser.
+4. Open `http://localhost:3000` in your browser.
 
 ----
 
