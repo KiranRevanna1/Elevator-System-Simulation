@@ -9,7 +9,12 @@ app.use(cors());
 app.use(express.json());
 
 const server = http.createServer(app);
-const io = new Server(server, { cors: { origin: '*' } });
+const io = new Server(server, {
+    cors: {
+        origin: ["https://elevator-system-simulation.vercel.app"], 
+        methods: ["GET", "POST"]
+    }
+});
 
 const sim = new Simulation(10, 3); // 10 floors, 3 elevators
 
