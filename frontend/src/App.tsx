@@ -34,8 +34,7 @@ function App() {
   });
 
   const floors = 10;
-  const shafts = 3;
-
+  const shafts = state.elevators.length || 3;
   useEffect(() => {
     socket.on('state', (data: SimState) => setState(data));
     return () => { socket.off('state'); };
