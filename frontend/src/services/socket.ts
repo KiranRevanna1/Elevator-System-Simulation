@@ -1,3 +1,4 @@
-import { io } from 'socket.io-client';
+import { io } from "socket.io-client";
 
-export const socket = io('http://localhost:4000');
+const SERVER_URL = process.env.REACT_APP_SERVER_URL || "http://localhost:4000";
+export const socket = io(SERVER_URL);
