@@ -51,5 +51,5 @@ io.on('connection', (socket) => {
   socket.on('close', () => clearInterval(handle));
 });
 
-const PORT = import.meta.env.PORT || 4000;
+const PORT = process.env.PORT || 4000;
 server.listen(PORT, () => console.log(`Server running on ${PORT}`));
