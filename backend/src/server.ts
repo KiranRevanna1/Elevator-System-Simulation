@@ -5,13 +5,22 @@ import cors from 'cors';
 import { Simulation } from './simulation';
 
 const app = express();
-app.use(cors());
+
+const allowedOrigins = [
+  "https://elevator-system-simulation.vercel.app", 
+  "http://localhost:3000"                          
+];
+
+app.use(cors({
+  origin: allowedOrigins,
+  methods: ["GET", "POST"]
+}));
 app.use(express.json());
 
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: ["https://elevator-system-simulation.vercel.app"],
+    origin: allowedOrigins,
     methods: ["GET", "POST"]
   }
 });
@@ -39,7 +48,8 @@ io.on('connection', (socket) => {
   }, 500);
 
   socket.on('disconnect', () => clearInterval(handle));
+  socket.on('close', () => clearInterval(handle));
 });
 
-const PORT = process.env.PORT || 4000;
+const PORT = import.meta.env.PORT || 4000;
 server.listen(PORT, () => console.log(`Server running on ${PORT}`));
